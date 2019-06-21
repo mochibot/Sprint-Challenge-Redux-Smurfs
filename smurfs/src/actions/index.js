@@ -39,17 +39,67 @@ export const addSmurf = (input) => (dispatch) => {
   })
   axios.post('http://localhost:3333/smurfs', input)
     .then(response => {
-      console.log('add smurfs success: ', response);
+      console.log('add smurf success: ', response);
       dispatch({
         type: ADD_SMURF_SUCCESS,
         payload: response.data
       })
     })
     .catch(error => {
-      console.log('fetch smurfs error: ', error);
+      console.log('add smurf error: ', error);
       dispatch({
         type: ADD_SMURF_FAILURE,
-        payload: 'Error adding smurfs'
+        payload: 'Error adding smurf'
+      })
+    })
+}
+
+export const EDIT_SMURF_START = 'EDIT_SMURF_START';
+export const EDIT_SMURF_SUCCESS = 'EDIT_SMURF_SUCCESS'
+export const EDIT_SMURF_FAILURE = 'EDIT_SMURF_FAILURE';
+
+export const editSmurf = (smurf) => (dispatch) => {
+  dispatch({
+    type: EDIT_SMURF_START
+  })
+  axios.put(`http://localhost:3333/smurfs/${smurf.id}`, smurf)
+    .then(response => {
+      console.log('edit smurf success: ', response)
+      dispatch({
+        type: EDIT_SMURF_SUCCESS,
+        payload: response.data
+      })
+    })
+    .catch(error => {
+      console.log('edit smurf failure: ', error)
+      dispatch({
+        type: EDIT_SMURF_FAILURE,
+        payload: 'Error editing smurf'
+      })
+    })
+}
+
+export const DELETE_SMURF_START = 'DELETE_SMURF_START';
+export const DELETE_SMURF_SUCCESS = 'DELETE_SMURF_SUCCESS'
+export const DELETE_SMURF_FAILURE = 'DELETE_SMURF_FAILURE';
+
+export const deleteSmurf = (id) => (dispatch) => {
+  dispatch({
+    type: DELETE_SMURF_START
+  })
+  axios.delete(`http://localhost:3333/smurfs/${id}`)
+    .then(response => {
+      console.log('delete smurf success: ', response)
+      dispatch({
+        type: DELETE_SMURF_SUCCESS,
+        payload: response.data
+      })
+    })
+    .catch(error => {
+      console.log('delete smurf failure: ', error)
+      dispatch({
+        type: DELETE_SMURF_FAILURE,
+        payload: 'Error deleting smurf'
       })
     })
 }
