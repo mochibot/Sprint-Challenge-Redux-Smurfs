@@ -2,27 +2,114 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+  background-color: #0FA8EB;
   color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px;
 }
 
-.App-title {
-  font-size: 1.5em;
+.App-header h1 {
+  margin: 0;
 }
 
-.App-intro {
-  font-size: large;
+.App-content {
+  margin: 60px auto 0 auto;
+  background: #0FA8EB;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.smurf-form {
+  background: white;
+  padding: 20px 0;
+}
+
+.smurf-form form {
+  width: 350px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.smurf-form form input {
+  font-size: 18px;
+  margin: 5px 0;
+  padding: 4px 8px;
+  border-radius: 10px;
+  border: 2px solid #0FA8EB;
+  outline: none;
+}
+
+.smurf-form form button {
+  border: 2px solid #0FA8EB;
+  background: #0FA8EB;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  margin: 8px 0;
+  padding: 6px 11px;
+  font-family: sans-serif;
+  cursor: pointer;
+  outline: none;
+}
+
+.smurf-form form button:hover {
+  border: 2px solid #0FA8EB;
+  color: #0FA8EB;
+  background: white;
+}
+
+.smurf-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.smurf-card {
+  width: 280px;
+  display: flex;
+  margin: 10px;
+  flex-direction: column;
+  background: white;
+  align-items: center;
+}
+
+.smurf-card-btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.smurf-card-btn button { 
+  margin: 10px 20px;
+  border: 2px solid #0FA8EB;
+  background: #0FA8EB;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  padding: 5px 10px;
+  font-family: sans-serif;
+  cursor: pointer;
+  outline: none;
+}
+
+.smurf-card-btn button:hover {
+  border: 2px solid #0FA8EB;
+  color: #0FA8EB;
+  background: white;
+}
+
+.smurf-card-btn :last-child {
+  border: 2px solid rgb(235, 15, 15);
+  background: rgb(235, 15, 15);
+}
+
+.smurf-card-btn :last-child:hover {
+  background: white;
+  color: rgb(235, 15, 15);
+  border: 2px solid rgb(235, 15, 15);
 }

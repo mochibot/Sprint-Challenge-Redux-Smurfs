@@ -48,7 +48,9 @@ class SmurfList extends React.Component {
         {this.props.isUpdating && <div>Updating smurf</div>}
         {this.props.isDeleting && <div>Deleting smurf</div>}
         {this.props.error && <div>{this.props.error}</div>}
-        {this.props.smurfs.map(item => <Smurf smurf={item} key={item.id} deleteSmurf={this.deleteSmurf} setUpdateForm={this.setUpdateForm}/>)}
+        <div className='smurf-cards'>
+          {this.props.smurfs.map(item => <Smurf smurf={item} key={item.id} deleteSmurf={this.deleteSmurf} setUpdateForm={this.setUpdateForm}/>)}
+        </div>
       </div>
     )
   }
